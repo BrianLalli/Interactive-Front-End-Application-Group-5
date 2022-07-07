@@ -1,26 +1,105 @@
 <!doctype html>
 <html lang="en">
-
-<head>
-    <!-- Required meta tags -->
+  <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Getting Started with Chart JS with www.chartjs3.com</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        font-family: sans-serif;
+      }
+      .chartMenu {
+        width: 100vw;
+        height: 40px;
+        background: #1A1A1A;
+        color: rgba(255, 26, 104, 1);
+      }
+      .chartMenu p {
+        padding: 10px;
+        font-size: 20px;
+      }
+      .chartCard {
+        width: 100vw;
+        height: calc(100vh - 40px);
+        background: rgba(255, 26, 104, 0.2);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .chartBox {
+        width: 700px;
+        padding: 20px;
+        border-radius: 20px;
+        border: solid 3px rgba(255, 26, 104, 1);
+        background: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="chartMenu">
+      <p>WWW.CHARTJS3.COM (Chart JS 3.8.0)</p>
+    </div>
+    <div class="chartCard">
+      <div class="chartBox">
+        <canvas id="myChart"></canvas>
+      </div>
+    </div>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-    <title>Group 5</title>
-</head>
+    <script type="text/javascript" src="https://unpkg.com/chartjs-chart-geo@3.5.2/build/index.umd.min.js"></script>
 
-<body>
-    <h1>Group 5</h1>
-    <p>Test! test</p>
+    <script>
+    // const url = 'https://unpkg.com/world-atlas@2.0.2/countries-50m.json';
+    const url = 'https://unpkg.com/us-atlas/states-10m.json';
+    
+    fetch(url).then((result) => result.json()).then((datapoint) => {
+        const countries = ChartGeo.topojson.feature(datapoint, datapoint.objects.countries).features;
 
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
-        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
-        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
-        crossorigin="anonymous"></script>
+        // console.log(countries[0].properties.name)
 
-    <script src="assets/js/script.js"></script>
-</body>
+        console.log()
 
-</html>
+        const data = {
+        labels: countries.map(country => country.properties.name),
+        datasets: [{
+            label: 'Countries',
+            data: countries.map(country => ({feature: country, value: Math.random()
+            })),
+
+         }]
+        };
+
+        // config 
+        const config = {
+        type: 'choropleth',
+        data,
+        options: {
+            showOutline: true,
+            showGraticule: true,
+            scales: {
+              xy: {
+                 projection: 'equalEarth'
+              }
+            },
+            plugins: {
+                legend: {
+                    display: false
+                }
+            }
+         }
+        };
+
+        // render init block
+        const myChart = new Chart(
+        document.getElementById('myChart'),
+        config
+        );
+        })
+
+    // setup 
+    
+    </script>
+
+  </body>
