@@ -29,7 +29,7 @@
         justify-content: center;
       }
       .chartBox {
-        width: 700px;
+        width: 80%;
         padding: 20px;
         border-radius: 20px;
         border: solid 3px rgba(255, 26, 104, 1);
@@ -55,17 +55,19 @@
     const url = 'https://unpkg.com/us-atlas/states-10m.json';
     
     fetch(url).then((result) => result.json()).then((datapoint) => {
-        const countries = ChartGeo.topojson.feature(datapoint, datapoint.objects.countries).features;
+      const nation = ChartGeo.topojson.feature(datapoint, datapoint.objects.nation).features[0];
+      const states = ChartGeo.topojson.feature(datapoint, datapoint.objects.states).features;
 
-        // console.log(countries[0].properties.name)
+       console.log(states[0].properties.name)
 
         console.log()
 
         const data = {
-        labels: countries.map(country => country.properties.name),
+        //labels: states.map(state => states.properties.name),
+        labels: states.map((d) => d.properties.name),
         datasets: [{
-            label: 'Countries',
-            data: countries.map(country => ({feature: country, value: Math.random()
+            label: 'States',
+            data: states.map(state => ({feature: state, value: Math.random()
             })),
 
          }]
@@ -76,12 +78,19 @@
         type: 'choropleth',
         data,
         options: {
-            showOutline: true,
-            showGraticule: true,
+            showOutline: false,
+            showGraticule: false,
             scales: {
               xy: {
-                 projection: 'equalEarth'
-              }
+                 projection: 'albersUsa'
+              },
+              color: {
+                  interpolate: (v) => (v < 0.5 ? 'green' : 'red'),
+                  legend: {
+                    position: 'bottom-right',
+                    align: 'right',
+                  }
+                } 
             },
             plugins: {
                 legend: {
