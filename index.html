@@ -10,7 +10,8 @@
     <script src="stylesheet" href="./assets/css/styles.css"></script>
     <title>$how Me The Money!</title>
     <style>
-        * {
+
+       * {
             margin: 0;
             padding: 0;
             font-family: 'Titillium Web', sans-serif;
@@ -36,19 +37,18 @@
             align-items: center;
             justify-content: center;
         }
-
-        .chartBox {
-            width: 900px;
-            padding: 20px;
-            border-radius: 20px;
-            border: solid 3px #025939;
-            background: white;
-        }
-
-        p {
+      .chartBox {
+        width: 80%;
+        padding: 20px;
+        border-radius: 20px;
+        border: solid 3px rgba(255, 26, 104, 1);
+        background: white;
+      } 
+      p {
             font-family: 'Titillium Web', sans-serif;
             font-size: 800px;
         }
+
     </style>
 
   </head>
@@ -344,44 +344,53 @@
     <script src="https://cdn.tailwindcss.com"></script>
 
     <script>
-        const url = 'https://unpkg.com/world-atlas@2.0.2/countries-50m.json';
-        // const url = 'https://unpkg.com/us-atlas/states-10m.json';
 
-        fetch(url).then((result) => result.json()).then((datapoint) => {
-            const countries = ChartGeo.topojson.feature(datapoint, datapoint.objects.countries).features;
+    // const url = 'https://unpkg.com/world-atlas@2.0.2/countries-50m.json';
+    const url = 'https://unpkg.com/us-atlas/states-10m.json';
+    
+    fetch(url).then((result) => result.json()).then((datapoint) => {
+      const nation = ChartGeo.topojson.feature(datapoint, datapoint.objects.nation).features[0];
+      const states = ChartGeo.topojson.feature(datapoint, datapoint.objects.states).features;
 
-            // console.log(countries[0].properties.name)
+       console.log(states[0].properties.name)
 
-            console.log()
+        console.log()
 
-            const data = {
-                labels: countries.map(country => country.properties.name),
-                datasets: [{
-                    label: 'Countries',
-                    data: countries.map(country => ({
-                        feature: country, value: Math.random()
-                    })),
+        const data = {
+        //labels: states.map(state => states.properties.name),
+        labels: states.map((d) => d.properties.name),
+        datasets: [{
+            label: 'States',
+            data: states.map(state => ({feature: state, value: Math.random()
+            })),
 
-                }]
-            };
+         }]
+        };
 
-            // config 
-            const config = {
-                type: 'choropleth',
-                data,
-                options: {
-                    showOutline: true,
-                    showGraticule: true,
-                    scales: {
-                        xy: {
-                            projection: 'equalEarth'
-                        }
-                    },
-                    plugins: {
-                        legend: {
-                            display: false
-                        }
-                    }
+        // config 
+        const config = {
+        type: 'choropleth',
+        data,
+        options: {
+            showOutline: false,
+            showGraticule: false,
+            scales: {
+              xy: {
+                 projection: 'albersUsa'
+              },
+              color: {
+                  interpolate: (v) => (v < 0.5 ? 'green' : 'red'),
+                  legend: {
+                    position: 'bottom-right',
+                    align: 'right',
+                  }
+                } 
+            },
+            plugins: {
+                legend: {
+                    display: false
+
+
                 }
             };
 
