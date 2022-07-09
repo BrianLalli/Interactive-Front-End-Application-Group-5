@@ -1,4 +1,14 @@
 var searchTerm = "jones";
+const stateSelect = $("#states");
+console.log(stateSelect);
+stateSelect.on("change", changeHandler);
+
+function changeHandler() {
+  const state = stateSelect.val();
+  localStorage.setItem("state", state);
+}
+const x = localStorage.getItem("state")
+stateSelect.val(x)
 
 function getApi() {
   var requestURL =
@@ -22,7 +32,6 @@ function getApi() {
 }
 
 getApi();
-
 
 function getApi2() {
   var requestURL =
