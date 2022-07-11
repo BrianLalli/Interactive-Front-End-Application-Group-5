@@ -49,4 +49,12 @@ console.log ('wellwellwell') ;
 
 
 
-
+function redirect(event) {
+  event.preventDefault();
+  console.log(event);
+  let url = "https://github.com/BrianLalli/Show-Me-The-Money";
+  window.location.replace(url);
+}
+document.getElementById("#GitHub").onclick = function () {
+  location.href = "https://github.com/BrianLalli/Show-Me-The-Money";
+};
