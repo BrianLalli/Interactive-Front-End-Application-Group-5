@@ -1,36 +1,74 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Titillium Web", sans-serif;
+}
+
 body {
   font-family: 'Titillium Web', sans-serif;
   font-size: 16px;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-weight: 700;
+/* Color Theme Swatches in Hex */
+.Messy--pile-of--hundred-dollar-bills-1-hex { color: #4E64A6; }
+.Messy--pile-of--hundred-dollar-bills-2-hex { color: #025939; }
+.Messy--pile-of--hundred-dollar-bills-3-hex { color: #012619; }
+.Messy--pile-of--hundred-dollar-bills-4-hex { color: #D9B79A; }
+.Messy--pile-of--hundred-dollar-bills-5-hex { color: #BF6734; }
+
+
+header {
+  background-color: #025939;
+  height: 75px;
 }
 
-/* .footer {
-  justify-content: space-between;
+#ProjectTitle {
+  font-size: 250%;
+  font-weight: bold;
+}
+
+.chartMenu {
+  width: 100vw;
+  height: 40px;
+  color: white;
+  text-align: center;
+}
+
+.chartMenu p {
+  padding: 10px;
+  font-size: 20px;
+}
+
+.chartCard {
+  width: 100vw;
+  height: calc(100vh - 30px);
+  background-image: url(https://i.etsystatic.com/28921914/r/il/50aa7d/3395390967/il_570xN.3395390967_bzhu.jpg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* .chartBox {
+  width: 80%;
+  padding: 20px;
+  border-radius: 20px;
+  border: solid 3px #025939;
+  background: white;
 } */
-
-
-.byline {
-  font-weight: 200;
-  font-style: italic;
-}
 
 #Register {
   background-color:  #025939;
 }
 
-/* #When {
-
+#When {
+  background-color:  #025939;
 }
 
 #Where {
-  
-} */
+  background-color:  #025939;
+}
 
+#footer {
+  border-style: solid;
+  border-color: #4E64A6;
+}
