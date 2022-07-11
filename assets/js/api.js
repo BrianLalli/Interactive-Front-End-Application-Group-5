@@ -38,7 +38,7 @@ async function fecApiStateSearch(stateCode) {
     "https://api.open.fec.gov/v1/candidates/search/?state=" +
     stateCode +
     "&api_key=XOqxKwdKYFd2FoLmHqrB69B1wFom8jVX9phrLv2D";
-    fetch(requestURL)
+  fetch(requestURL)
     .then(function (response) {
       return response.json();
     })
@@ -49,4 +49,3 @@ async function fecApiStateSearch(stateCode) {
       console.error(error);
     });
 }
-
