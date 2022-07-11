@@ -1,51 +1,14 @@
+const stateSelect = $("#states");
+stateSelect.on("change", changeHandler);
 
-var searchTerm = "smith" ;
-
-function getApi() {
-  var requestURL= ("https://api.propublica.org/campaign-finance/%7Bversion%7D/")
-  
-
-
-     
-
-  fetch (requestURL,{
-    headers :  {
-      "X-API-Key": "E6u8viCVj13rNseXzDKAbmffq8AfGmvQgHmXl687"
-      
-    }
-  })
-
-  .then(function (response) {
-    return response.json();
-  })
-  .then(function (data){
-    console.log(data)
-  
-}) 
+function changeHandler() {
+  const state = stateSelect.val();
+  localStorage.setItem("state", state);
 }
-
-getApi()
-
-console.log("---------------")
-function getApi2() {
-var requestURL= ("https://api.open.fec.gov/v1/names/candidates/?q=" + searchTerm + "&api_key=XOqxKwdKYFd2FoLmHqrB69B1wFom8jVX9phrLv2D")
-fetch (requestURL)
-.then(function (response) {
-     
-      return response.json();
-    })
-    .then(function (data){
-      console.log(data)
-
-})
-    }
+const x = localStorage.getItem("state");
+stateSelect.val(x);
 
 
 
-
-getApi2()
-console.log ('wellwellwell') ;
-
-
-
-
+propubApi();
+fecApiStateSearch(stateSelect.val());
