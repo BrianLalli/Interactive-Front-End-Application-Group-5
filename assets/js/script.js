@@ -1,6 +1,6 @@
 const stateSelect = $("#states");
 stateSelect.on("change", changeHandler);
-
+const stateResults = $("#stateResults");
 function changeHandler() {
   const state = stateSelect.val();
   localStorage.setItem("state", state);

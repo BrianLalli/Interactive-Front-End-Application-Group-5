@@ -33,7 +33,7 @@ function fecApiNameSearch(searchTerm = "jones") {
     });
 }
 
-async function fecApiStateSearch(stateCode) {
+function fecApiStateSearch(stateCode) {
   var requestURL =
     "https://api.open.fec.gov/v1/candidates/search/?state=" +
     stateCode +
@@ -43,7 +43,13 @@ async function fecApiStateSearch(stateCode) {
       return response.json();
     })
     .then(function (data) {
-      console.log(data);
+      console.log(data.results);
+      for (var i=0; i < data.results.length; i++) {
+        console.log(data.results[i].name)
+        stateResults.append(`
+        <li><a href=${data.results[i].name}</li>`)
+        <button>${dataresults[i].party}</button>
+      }
     })
     .catch(function (error) {
       console.error(error);
