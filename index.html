@@ -8,59 +8,19 @@
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="./assets/css/styles.css"></link>
+    <link rel="stylesheet" href="./assets/css/styles.css">
+    </link>
     <title>$how Me The Money!</title>
-   
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            font-family: "Titillium Web", sans-serif;
-        }
-
-        .chartMenu {
-            width: 100vw;
-            height: 40px;
-            background: #025939;
-            color: white;
-        }
-
-        .chartMenu p {
-            padding: 10px;
-            font-size: 20px;
-        }
-
-        .chartCard {
-            width: 100vw;
-            height: calc(100vh - 20px);
-            background-image: url(https://i.etsystatic.com/28921914/r/il/50aa7d/3395390967/il_570xN.3395390967_bzhu.jpg);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .chartBox {
-            width: 80%;
-            padding: 20px;
-            border-radius: 20px;
-            border: solid 3px rgba(255, 26, 104, 1);
-            background: white;
-        }
-
-        p {
-            font-family: 'Titillium Web', sans-serif;
-            font-size: 800px;
-        }
-    </style>
 </head>
 
 <body>
+    <header>
+        <div class="chartMenu">
+            <p id="ProjectTitle">$how Me The Money!</p>
+        </div>
+    </header>
 
-    <div class="chartMenu">
-        <p>$how Me The Money!</p>
-    </div>
-
-    <form>
+    <form id="dropdown">
         <label for="states" class="sr-only">Choose a state</label>
         <select onchange="this.form.submit()" id="states"
             class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-r-lg border-l-gray-100 dark:border-l-gray-700 border-l-2 focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
@@ -125,34 +85,30 @@
 </div>
     <!-- <div class="chartCard">
         <div class="chartBox">
-            <canvas id="myChart"></canvas>
         </div>
-    </div> -->
-    <footer>
-        <div class="row justify-content-center">
-            <div class="container text-center py-4">
-                <div class="col-12 btn-3">
-                    <form>
-                        <a href="" class="button is-success is-link" id="Register">Register to vote!</a>
-                        <a href="" class="button is-success is-link" id="When">When is the next election?</a>
-                        <a href="" class="button is-success is-link" id="Where">Where can I vote?</a>
-                        <a href="https://github.com/BrianLalli/Show-Me-The-Money">
-                            <div class="button is-success is-link is-light" id="GitHub">
-                                <span class="icon">
-                                    <i class="fab fa-github"></i>
-                                </span>
-                                <span>GitHub</span>
-                            </div>
-                        </a>
-                    </form>
-                </div>
-            </div>
-        </div>
-        <div>
 
+
+    <div class="row content has-text-centered">
+        <div class="container text-center py-4">
+            <form>
+                <a href="https://www.vote.org/am-i-registered-to-vote/?gclid=Cj0KCQjwlK-WBhDjARIsAO2sErQuM7hqUFjx8KS1hFsJm8-wTyjhX4m_l7RzjDFoDqGZvy73u0wLKGMaAjluEALw_wcB"
+                    class="button is-success is-link" id="Register">Register to vote!</a>
+                <a href="https://www.usa.gov/election-office" class="button is-success is-link" id="When">When is
+                    the next election?</a>
+                <a href="https://www.usa.gov/how-to-vote" class="button is-success is-link" id="Where">Where can I
+                    vote?</a>
+                <a href="https://github.com/BrianLalli/Show-Me-The-Money">
+                    <div class="button is-success is-link is-light" id="GitHub">
+                        <span class="icon">
+                            <i class="fab fa-github"></i>
+                        </span>
+                        <span>GitHub</span>
+                    </div>
+                </a>
+            </form>
         </div>
-    </footer>
-     <script
+ 
+    <script
 			  src="https://code.jquery.com/jquery-3.6.0.slim.js"
 			  integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY="
 			  crossorigin="anonymous"></script>
