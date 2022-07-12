@@ -12,7 +12,6 @@ stateSelect.val(x);
 //   const data.results.name = $("#stateResults");
 
 
-
 // var requestUrl = 'https://api.github.com/repos/twitter/chill/issues?per_page=5';
 
 // fetch(requestUrl)
