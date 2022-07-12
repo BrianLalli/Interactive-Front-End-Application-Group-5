@@ -40,7 +40,6 @@ body {
   font-size: 20px;
 }
 
-
 /* #Register {
   background-color:  #025939;
 }
@@ -71,4 +70,14 @@ body {
   color: #4E64A6;
 }
 
+.buttonStyle {
+  border: #BF6734;
+}
 
+.infoDisplayClass {
+ display: flex ;
+ justify-content: center;
+ align-items: center;
+ text-align: center;
+ /* flex-direction: row-reverse; */
+}
