@@ -43,7 +43,7 @@ header {
 .chartCard {
   width: 100vw;
   height: calc(100vh - 30px);
-  background-image: url(https://i.etsystatic.com/28921914/r/il/50aa7d/3395390967/il_570xN.3395390967_bzhu.jpg);
+  /* background-image: url(https://i.etsystatic.com/28921914/r/il/50aa7d/3395390967/il_570xN.3395390967_bzhu.jpg); */
 }
 
 /* .chartBox {
@@ -76,4 +76,14 @@ header {
   margin: 10px;
 }
 
+.buttonStyle {
+  border: #BF6734;
+}
 
+.infoDisplayClass {
+ display: flex ;
+ justify-content: center;
+ align-items: center;
+ text-align: center;
+ /* flex-direction: row-reverse; */
+}

@@ -14,11 +14,12 @@ function fecApiStateSearch(stateCode) {
     })
     .then(function (data) {
       console.log(data.results);
+
       for (var i = 0; i < data.results.length; i++) {
         console.log(data.results[i].name);
         stateResults.append(`
         <li>${data.results[i].name}</li>
-        <button id=${data.results[i].candidate_id} data-year=${data.results[i].active_through}>Show Me the Money!</button>
+        <button class= buttonStyle id=${data.results[i].candidate_id} data-year=${data.results[i].active_through} data-name=${data.results[i].name}>Show Me the Money!</button>
         `);
       }
     })
@@ -30,6 +31,10 @@ function fecApiStateSearch(stateCode) {
 
 function showMoney(event) {
   event.preventDefault();
+  const contributionResult = document.getElementById("contributionResult");
+  if (contributionResult != null) {
+    contributionResult.remove();
+  }
   console.log(event.target.id);
   propubApi(event.target.id, event.target.dataset.year);
   var requestURL =
@@ -47,7 +52,7 @@ function showMoney(event) {
       //   console.log(data.results[i].contributions);
 
       infoDisplay.append(`
-    <h1>$${data.results[0].contributions}</h1>`);
+    <h1 id="contributionResult">Latest Active Year Contributions: $${data.results[0].contributions}</h1>`);
 
       // }
     });
@@ -56,6 +61,14 @@ function showMoney(event) {
 
 var stateCode = $("#state");
 function propubApi(candidateId, year) {
+  const urlResultSpan = document.getElementById("urlResultSpan");
+  if (urlResultSpan != null) {
+    urlResultSpan.remove();
+  }
+  const urlResult = document.getElementById("urlResult");
+  if (urlResult != null) {
+    urlResult.remove();
+  }
   const requestURL =
     "https://salty-mountain-68764.herokuapp.com/https://api.propublica.org/campaign-finance/v1/" +
     year +
@@ -82,7 +95,11 @@ function propubApi(candidateId, year) {
         console.log(data.results[i].fec_uri);
       }
       infoDisplay.append(`
-    <a>${data.results[0].fec_uri}</a>`);
+    <span id="urlResultSpan">Fiscal Profile:</span>
+    <a id="urlResult" href=${data.results[0].fec_uri}>
+     ${data.results[0].fec_uri}</a>`);
+      // infoDisplay.append(`
+      // <h2>${data.results[i].name}`);
     })
 
     .catch(function (error) {
