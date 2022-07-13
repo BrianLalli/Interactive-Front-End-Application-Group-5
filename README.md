@@ -11,7 +11,7 @@
 
 <br>
 
-#### You can access this project via [GitHub]()
+#### You can access this project via [GitHub](https://brianlalli.github.io/Show-Me-The-Money/)
 
 <br>
 
