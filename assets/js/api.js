@@ -4,7 +4,7 @@ function fecApiStateSearch(stateCode) {
   var requestURL =
     "https://api.open.fec.gov/v1/candidates/search/?state=" +
     stateCode +
-    "&api_key=XOqxKwdKYFd2FoLmHqrB69B1wFom8jVX9phrLv2D";
+    "&api_key=XOqxKwdKYFd2FoLmHqrB69B1wFom8jVX9phrLv2D&sort_hide_null=false&per_page=10";
   console.log(stateCode);
   window.stateCode = stateCode;
 
@@ -112,3 +112,5 @@ function propubApi(candidateId, year) {
 }
 
 $("#stateResults").on("click", showMoney);
+
+// $("").paging({limit:});
