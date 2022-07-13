@@ -5,9 +5,9 @@
 * This team successfully created an interactive front-end application 
 * You can search for government representatives and see how much money they’ve raised. 
 * This application was accomplished using Pro Publica Campaign Finance and Congress APIs and the following code:
-    * 57.8% HTML
-    * 14.1% CSS
-    * 20.4% JavaScript
+    * 77.8% HTML
+    * 6.0% CSS
+    * 16.2% JavaScript
 
 <br>
 
@@ -15,34 +15,35 @@
 
 <br>
 
-## Mock Up:
-![Mock Up](./assets/Mock%20Up%201.png)
-
-<br>
 
 ## How It Works:
 First, you are brought to a landing page showing a dropdown of the 50 states of America.
-![Landing Page](./assets/images/Landing%20Page.png)
+![Landing Page](./assets/images/Landing%20Page%202.png)
 
 <br>
 
 Then, you can click into the dropdown and choose a state.
-![Click Into State Dropdown](./assets/images/Dropdown.png)
+![Click Into State Dropdown](./assets/images/Dropdown3.png)
 
 <br>
 
 Next, an alphabatized list of the respective state government representatives populates on the page.
-![List of State Representatives](./assets/images/List%20of%20Represenatives.png)
+![List of State Representatives](./assets/images/List%202.png)
 
 <br>
 
-Click on any you'd like and see how much money they've raised.
-![Fundraising]()
+Click on "Show Me The Money!" button under any chosen representative.
+![Click on Representative](./assets/images/Click%20Rep.png)
+
+<br>
+
+See how much money they've raised in the past year as well as a link to their financial profile from the Federal Election Commission.
+![Funds Raised](./assets/images/Contributions3.png)
 
 <br>
 
 Lastly, you can click on the buttons to register to vote or discover when and where the next elections are near you!
-![Resource Buttons](./assets/images/Button.png)
+![Resource Buttons](./assets/images/Buttons3.png)
 
 <br>
 
@@ -55,14 +56,9 @@ Lastly, you can click on the buttons to register to vote or discover when and wh
 
 <br>
 
-## Bugs:
-
-
-<br>
-
 
 ## Future Development:
-
+![Future Development](./assets/images/Future%20Development.png)
 
 <br>
 
