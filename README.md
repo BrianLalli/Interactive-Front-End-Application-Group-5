@@ -3,18 +3,23 @@
 
 ## Project Description:
 * This team successfully created an interactive front-end application 
-* You can search for government representatives and see how much money they’ve raised. 
-* This application was accomplished using Pro Publica Campaign Finance and Congress APIs and the following code:
-    * 77.8% HTML
-    * 6.0% CSS
-    * 16.2% JavaScript
+* Users can search for government representatives and see how much money they’ve raised. 
+* This application was accomplished using Pro Publica Campaign Finance and Federal Election Commission APIs and the following languages:
+    * 66.4% HTML
+    * 6.4% CSS
+    * 27.2% JavaScript
 
 <br>
 
 #### You can access this project via [GitHub](https://brianlalli.github.io/Show-Me-The-Money/)
 
+
 <br>
 
+## User Story:
+![User Story](./assets/images/User%20Story.png)
+
+<br>
 
 ## How It Works:
 First, you are brought to a landing page showing a dropdown of the 50 states of America.
@@ -48,14 +53,20 @@ Lastly, you can click on the buttons to register to vote or discover when and wh
 <br>
 
 ## Credits:
+![Meet The Team](./assets/images/Meet%20The%20Team.png)
 * [Neel Kakarala](https://github.com/kakaralan)
 * [Alice Nutt](https://github.com/Ali-Kat96)
 * [Robert Arn](https://github.com/rarn92)
 * [Brian Lalli](https://github.com/BrianLalli)
 * [Mitchell Merka](https://github.com/levmerka)
 
+
 <br>
 
+## Challenges:
+![Challenges](./assets/images/Challenges.png)
+
+<br>
 
 ## Future Development:
 ![Future Development](./assets/images/Future%20Development.png)
