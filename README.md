@@ -5,9 +5,9 @@
 * This team successfully created an interactive front-end application 
 * You can search for government representatives and see how much money they’ve raised. 
 * This application was accomplished using Pro Publica Campaign Finance and Congress APIs and the following code:
-    * 71.6% HTML
+    * 66.4% HTML
     * 6.4% CSS
-    * 22.0% JavaScript
+    * 27.2% JavaScript
 
 <br>
 
