@@ -4,7 +4,7 @@ function fecApiStateSearch(stateCode) {
   var requestURL =
     "https://api.open.fec.gov/v1/candidates/search/?state=" +
     stateCode +
-    "&api_key=XOqxKwdKYFd2FoLmHqrB69B1wFom8jVX9phrLv2D";
+    "&api_key=XOqxKwdKYFd2FoLmHqrB69B1wFom8jVX9phrLv2D&sort_hide_null=false&per_page=10";
   console.log(stateCode);
   window.stateCode = stateCode;
 
@@ -69,6 +69,10 @@ function propubApi(candidateId, year) {
   if (urlResult != null) {
     urlResult.remove();
   }
+  const nameResult = document.getElementById("nameResult");
+  if (nameResult != null) {
+    nameResult.remove();
+  }
   const requestURL =
     "https://salty-mountain-68764.herokuapp.com/https://api.propublica.org/campaign-finance/v1/" +
     year +
@@ -98,8 +102,8 @@ function propubApi(candidateId, year) {
     <span id="urlResultSpan">Fiscal Profile:</span>
     <a id="urlResult" href=${data.results[0].fec_uri}>
      ${data.results[0].fec_uri}</a>`);
-      // infoDisplay.append(`
-      // <h2>${data.results[i].name}`);
+      infoDisplay.append(`
+      <h2 id="nameResult">${data.results[0].name}</h2>`);
     })
 
     .catch(function (error) {
@@ -108,3 +112,5 @@ function propubApi(candidateId, year) {
 }
 
 $("#stateResults").on("click", showMoney);
+
+// $("").paging({limit:});
